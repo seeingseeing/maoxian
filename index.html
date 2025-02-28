@@ -1,9 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
+
 <head>
-  <title>我的网站</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>狗狗婚礼请柬生成器</title>
 </head>
+
 <body>
-  <h1>吓死你们所有人！看见这行字的每个人给我1元钱否则将遭受我的怒火！！！！！！！！！</h1>
+  <!-- 粉色花瓣容器 -->
+  <div class="petals">
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+  </div>
+
+  <header>
+    <h1>狗狗的梦幻婚礼请柬</h1>
+  </header>
+  <main>
+    <section id="input-section">
+      <label for="dog1-name">新郎狗狗名字:</label>
+      <input type="text" id="dog1-name" required>
+      <label for="dog2-name">新娘狗狗名字:</label>
+      <input type="text" id="dog2-name" required>
+      <label for="wedding-date">婚礼日期:</label>
+      <input type="date" id="wedding-date" required value="2025-03-01">
+      <label for="wedding-time">婚礼时间:</label>
+      <input type="time" id="wedding-time" required value="14:00">
+      <label for="wedding-place">婚礼地点:</label>
+      <input type="text" id="wedding-place" required>
+      <button onclick="generateInvitation()">生成请柬</button>
+    </section>
+    <section id="invitation-section" style="display: none;">
+      <div id="invitation">
+        <h2>婚礼请柬</h2>
+        <p>亲爱的朋友，</p>
+        <p>我们怀着无比喜悦的心情，邀请您参加 <span id="dog1-display"></span> 和 <span id="dog2-display"></span> 的婚礼！</p>
+        <p>日期: <span id="date-display"></span></p>
+        <p>时间: <span id="time-display"></span></p>
+        <p>地点: <span id="place-display"></span></p>
+        <p>期待您的到来！</p>
+      </div>
+      <button onclick="printInvitation()">打印请柬</button>
+    </section>
+  </main>
+  <script src="script.js"></script>
 </body>
+
 </html>
